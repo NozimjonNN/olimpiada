@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="about.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F4F7FA; /* Soft light background */
+            color: #333; /* Dark gray text */
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        header {
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+        header h1 {
+            font-size: 3rem;
+            color: #2C3E50; /* Dark blue for titles */
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+        .about-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+        .about-content h2 {
+            font-size: 2.5rem;
+            color: #2980B9; /* Light blue for headings */
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        .about-content p {
+            font-size: 1.2rem;
+            color: #555; /* Dark gray for main text */
+            text-align: justify;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            color: #F39C12; /* Bright yellow for highlights */
+            font-weight: bold;
+        }
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+        .team-member {
+            background-color: #FFFFFF;
+            padding: 25px;
+            width: 300px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .team-member h3 {
+            font-size: 1.6rem;
+            color: #2980B9;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+        .team-member p {
+            font-size: 1rem;
+            color: #7F8C8D;
+        }
+        .mission-values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .mission-values div {
+            padding: 30px;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .mission-values div:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+        nav {
+            border-radius: 0 0 16px 16px;
+            box-shadow: 0 0 2px #2196F3;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .logo { width: 100px; height: 100px; }
+        .nav-brand { font-size: 30px; color: #263238; }
+        .nav-list { list-style: none; gap: 10px; display: flex; }
+        .nav-link { text-decoration: none; opacity: 0.5; color: #263238; transition: 0.8s; }
+        .nav-link:hover { opacity: 1; }
+        .active { opacity: 1; }
+        .half-cyber { font-family: "Dosis", serif; }
+        .flex { display: flex; }
+        .jcc { justify-content: center; }
+        .aic { align-items: center; }
+
+        /* Footer Styles */
+        footer {
+            background-color: #2C3E50;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        footer .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        footer .footer-content div {
+            width: 250px;
+        }
+        footer h3 {
+            font-size: 1.6rem;
+            color: #F39C12;
+            margin-bottom: 15px;
+        }
+        footer p {
+            font-size: 1rem;
+            color: #BDC3C7;
+            line-height: 1.6;
+        }
+        footer .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        footer .social-links a {
+            color: #BDC3C7;
+            font-size: 1.4rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        footer .social-links a:hover {
+            color: #F39C12;
+        }
+
+        /* Mobile responsiveness for footer */
+        @media (max-width: 768px) {
+            footer .footer-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            footer .footer-content div {
+                width: 100%;
+                text-align: center;
+            }
+            footer .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            /* Header */
+            header h1 {
+                font-size: 2rem;
+            }
+
+            /* About content */
+            .about-content h2 {
+                font-size: 2rem;
+            }
+
+            .about-content p {
+                font-size: 1rem;
+            }
+
+            /* Team members */
+            .team-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .team-member {
+                width: 100%;
+                max-width: 400px;
+                margin-bottom: 20px;
+            }
+
+            .mission-values {
+                grid-template-columns: 1fr;
+            }
+
+            nav .nav-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-list {
+                margin-top: 20px;
+            }
+
+            .nav-link {
+                font-size: 1.2rem;
+                padding: 10px;
+                width: 100%;
+                text-align: center;
+            }
+
+            .logo {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="flex">
+        <h1 class="nav-brand half-cyber flex aic"><img src="Logo.png" class="logo" alt="logo"> Ecologia</h1>
+        <ul class="nav-list flex aic">
+            <li><a href="#" class="active nav-link">Home</a></li>
+            <li><a href="./pages/about/about.html" class="nav-link">About</a></li>
+            <li><a href="./pages/solutions/sol.html" class="nav-link">Solution</a></li>
+            <li><a href="./pages/froms/form.html" class="nav-link">Forms</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>About Our Organization</h1>
+    </header>
+
+    <section class="about-content">
+        <h2>Our Mission and Values</h2>
+        <p>We are committed to promoting sustainable practices that help preserve natural resources for future generations. By inspiring society to actively engage in environmental solutions, we create projects that improve quality of life without harming ecosystems.</p>
+        <p><span class="highlight">Responsibility and innovation</span> are the core principles of our work. We believe that together we can create a future where ecology and development go hand in hand.</p>
+    </section>
+
+    <section class="about-content">
+        <h2>Our Team</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="image1.jpg" alt="Ivan Ivanov">
+                <h3>Ivan Ivanov</h3>
+                <p>Ivan is an experienced environmentalist leading our projects focused on biodiversity conservation and improving water quality.</p>
+            </div>
+            <div class="team-member">
+                <img src="image2.jpg" alt="Maxim Shudeyka">
+                <h3>Maxim Shudeyka</h3>
+                <p>Maxim specializes in sustainable development and the implementation of alternative energy sources across various sectors.</p>
+            </div>
+            <div class="team-member">
+                <img src="image3.jpg" alt="Alexey Kuznetsov">
+                <h3>Alexey Kuznetsov</h3>
+                <p>Alexey heads our waste recycling and carbon footprint reduction projects in large industrial enterprises.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-content mission-values">
+        <div>
+            <h2>Our Mission</h2>
+            <p>Our goal is to create a future where the balance between nature and development is maintained at every level. We work on creating sustainable ecosystems and raising awareness about the importance of protecting nature. Our mission is to inspire people to take action for the benefit of the planet.</p>
+        </div>
+        <div>
+            <h2>Our Values</h2>
+            <p>We are committed to honesty, transparency, and social responsibility. Our projects aim to bring about real change in society's relationship with the environment, and we are determined to take small but significant steps toward a more sustainable and equitable future.</p>
+        </div>
+    </section>
+
+    <section class="about-content">
+        <h2>Our Goal</h2>
+        <p>Our aim is to create a culture of sustainable development where everyone understands their responsibility toward the future of the planet. Our projects are designed to enhance people's quality of life while preserving natural resources for future generations.</p>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Колонка 1 -->
+            <div class="footer-column">
+                <h4></h4>
+                <ul>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">История</a></li>
+                    <li><a href="#">Карьера</a></li>
+                    <li><a href="#">Новости</a></li>
+                </ul>
+            </div>
+
+            <!-- Колонка 2 -->
+            <div class="footer-column">
+                <h4></h4>
+                <ul>
+                    <li><a href="#">Услуги</a></li>
+                    <li><a href="#">Партнеры</a></li>
+                    <li><a href="#">Контакты</a></li>
+                    <li><a href="#">Отзывы</a></li>
+                </ul>
+            </div>
+
+            <!-- Колонка 3 -->
+            <div class="footer-column">
+                <h4></h4>
+                <ul>
+                    <li><a href="#">Наши проекты</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Поддержка</a></li>
+                    <li><a href="#">API</a></li>
+                </ul>
+            </div>
+
+            <!-- Колонка 4 -->
+            <div class="footer-column">
+                <h4></h4>
+                <ul>
+                    <li><a href="#">Приватность</a></li>
+                    <li><a href="#">Условия использования</a></li>
+                    <li><a href="#">Безопасность</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Колонка 5 -->
+            <div class="footer-column">
+                <h4>Контакты</h4>
+                <ul>
+                    <li><a href="#">Адрес: ул. Центральная, 123</a></li>
+                    <li><a href="#">Телефон: +123 456 789</a></li>
+                    <li><a href="#">Email: info@company.com</a></li>
+                    <li><a href="#">Работаем: Пн-Пт, 9:00 - 18:00</a></li>
+                </ul>
+            </div>
+
+            <!-- Колонка 6 -->
+            <div class="footer-column">
+                <h4>Следите за нами</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Низ футера -->
+        <div class="footer-bottom">
+            &copy; 2024 Все права защищены. Ваш Сайт.
+        </div>
+    </footer>
+</body>
+</html>
